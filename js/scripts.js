@@ -18,13 +18,22 @@ function Pizza(size, meat, toppings, premium) {
   this.toppings = toppings;
   this.premium = premium;
 };
-// Pizza.prototype.price = function() {
-//   var price = 0;
-//   price += this.size
-// }
 
+Pizza.prototype.price = function() {
+  var price = 0;
+  price += this.size
+}
+Pizza.prototype.order = function() {
+  var order = (
+    "Size: " + this.size + "<br>" +
+    "Meat: " + this.meat + "<br>" +
+    "Toppings: " + this.toppings + "<br>" +
+    "Premium toppings: " + this.premium + "<br>"
+)
+return order;
 
-var UserPizza = new Pizza (size[0],meat[0],toppings[0],premium[0]);
+}
+
 
 $(document).ready(function() {
   $('form').submit(function(event) {
@@ -38,7 +47,6 @@ $(document).ready(function() {
       var userMeat = $(this).val();
       userMeatArray.push(userMeat);
     });
-
     $("input:checkbox[name=toppings-selection]:checked").each(function() {
       userToppingsArray.push($(this).val());
     });
@@ -46,9 +54,10 @@ $(document).ready(function() {
       var userPremium = $(this).val();
       userPremiumArray.push($(this).val());
     });
+    userPizza = new Pizza(userSize,userMeatArray,userToppingsArray, userPremiumArray);
 
-    UserPizza = new Pizza(userSize,userMeatArray,userToppingsArray, userPremiumArray);
-
-    console.log(UserPizza);
+    console.log(userPizza);
+    userOrder = userPizza.order()
+    $("#confirmation-output").append(userOrder);
   });
 });

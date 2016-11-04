@@ -13,14 +13,21 @@
         <h1>Bobo's Pizza Shop</h1>
       </div>
       <div class="place-order">
-        <form class="" action="index.html" method="post">
+        <form>
           <div class="form-group size"><!-- SIZE -->
             <label for="size">Please select a size:</label>
             <select class="form-control" id="size-selection" name="size">
               <option value="Small">Small</option>
-              <option value="Small">Medium</option>
-              <option value="Small">Large</option>
-              <option value="Small">X-Large</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+              <option value="Extra-large">Extra Large</option>
+            </select>
+          </div>
+          <div class="form-group crust"><!-- SIZE -->
+            <label for="crust-selection">Please select a crust type:</label>
+            <select class="form-control" id="crust-selection" name="size">
+              <option value="Thin-crust">Thin Crust</option>
+              <option value="Chigago-style">Chicago Style</option>
             </select>
           </div>
           <div class="form-group meat"> <!--MEAT -->
@@ -60,6 +67,7 @@
         <p>Please confirm your order</p>
         <div id="confirmation-output">
         </div>
+        <button type="button" name="confirm" class="btn btn-success confirm">Place Order</button>
       </div>
       <div class="receipt">
         <p>Here is a receipt for your records:</p>

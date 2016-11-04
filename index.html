@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.css" charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css" charset="utf-8">
+    <script src="js/jquery-3.1.1.js" charset="utf-8"></script>
+    <script src="js/scripts.js" charset="utf-8"></script>
+    <title>Bobo's Piza Shop</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Bobo's Piza Shop</h1>
+      </div>
+      <div class="place-order">
+        <form class="" action="index.html" method="post">
+          <div class="form-group size"><!-- SIZE -->
+            <label for="size">Please select a size:</label>
+            <select class="form-control" id="size-selection" name="size">
+              <option value="Small">Small</option>
+              <option value="Small">Medium</option>
+              <option value="Small">Large</option>
+              <option value="Small">X-Large</option>
+            </select>
+          </div>
+          <div class="form-group meat"> <!--MEAT -->
+            <div class="form-group form-control"> <!-- TOPPINGS -->
+              <label for="toppings-selection">Please add your meat selection</label>
+              <input type="checkbox" name="meat-selection" value="pepperoni"> Pepperoni<br>
+              <input type="checkbox" name="meat-selection" value="sausage"> Sausage<br>
+              <input type="checkbox" name="meat-selection" value="chicken"> Chicken<br>
+              <input type="checkbox" name="meat-selection" value="canadian-bacon"> Canadian Bacon<br>
+              <input type="checkbox" name="meat-selection" value="pancetta"> Pancetta<br>
+              <input type="checkbox" name="meat-selection" value="ground-beef"> Ground beef (Flavored with taco seasoning)<br>
+            </div>
+          </div>
+          <div class="form-group form-control"> <!-- TOPPINGS -->
+            <label for="toppings-selection">Please add your toppings</label>
+            <input type="checkbox" name="toppings-selection" value="olives"> Olives<br>
+            <input type="checkbox" name="toppings-selection" value="mushrooms"> Mushrooms<br>
+            <input type="checkbox" name="toppings-selection" value="onions"> Red Onions<br>
+            <input type="checkbox" name="toppings-selection" value="peppers"> Green Peppers<br>
+            <input type="checkbox" name="toppings-selection" value="jalapenos"> Jalapeños<br>
+            <input type="checkbox" name="toppings-selection" value="tomatoes"> Fresh Tomatoes<br>
+            <input type="checkbox" name="toppings-selection" value="basil"> Fresh Basil
+          </div>
+
+          <div class="form-group premium"><!--PREMIUM-->
+            <label for="premium-selection">Please add any Premium toppings:</label>
+            <input type="checkbox" name="premium-selection" value="artichoke"> Artichoke Hearts<br>
+            <input type="checkbox" name="premium-selection" value="sun-dried tomatoes"> Sun-dried Tomatoes<br>
+            <input type="checkbox" name="premium-selection" value="kalamata-olives"> Kalamata Olives<br>
+            <input type="checkbox" name="premium-selection" value="garlic"> Roasted Garlic<br>
+            <input type="checkbox" name="premium-selection" value="tomatoes"> Fresh Tomatoes<br>
+          </div>
+          <button type="submit" class="btn btn-primary"name="submit-order" id="submit-order">Next</button>
+        </form>
+      </div>
+      <div class="confirmation">
+        <p>Please confirm your order</p>
+        <div id="confirmation-output">
+        </div>
+      </div>
+      <div class="receipt">
+        <p>Here is a receipt for your records:</p>
+        <div id="receipt-output">
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

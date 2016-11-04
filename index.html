@@ -9,71 +9,84 @@
   </head>
   <body>
     <div class="container">
-      <div class="header">
+      <div class="head">
         <h1>Bobo's Pizza Shop</h1>
+        <img src="img/sketchy.jpg" alt="sketchy guy" class="img-rounded"/>
       </div>
       <div class="place-order">
         <form>
-          <div class="form-group size"><!-- SIZE -->
-            <label for="size">Please select a size:</label>
-            <select class="form-control" id="size-selection" name="size">
-              <option value="Small">Small</option>
-              <option value="Medium">Medium</option>
-              <option value="Large">Large</option>
-              <option value="Extra-large">Extra Large</option>
-            </select>
-          </div>
-          <div class="form-group crust"><!-- SIZE -->
-            <label for="crust-selection">Please select a crust type:</label>
-            <select class="form-control" id="crust-selection" name="size">
-              <option value="Thin-crust">Thin Crust</option>
-              <option value="Chigago-style">Chicago Style</option>
-            </select>
-          </div>
-          <div class="form-group meat"> <!--MEAT -->
-            <div class="form-group form-control"> <!-- TOPPINGS -->
-              <label for="toppings-selection">Please add your meat selection</label>
-              <input type="checkbox" name="meat-selection" value="pepperoni"> Pepperoni<br>
-              <input type="checkbox" name="meat-selection" value="sausage"> Sausage<br>
-              <input type="checkbox" name="meat-selection" value="chicken"> Chicken<br>
-              <input type="checkbox" name="meat-selection" value="canadian-bacon"> Canadian Bacon<br>
-              <input type="checkbox" name="meat-selection" value="pancetta"> Pancetta<br>
-              <input type="checkbox" name="meat-selection" value="ground-beef"> Ground beef (Flavored with taco seasoning)<br>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group size"><!-- SIZE -->
+                <label for="size">Please select a size:</label>
+                <select class="form-control" id="size-selection" name="size">
+                  <option value="Small">Small - $5 base price</option>
+                  <option value="Medium">Medium - $10 base price</option>
+                  <option value="Large">Large - $15 base price</option>
+                  <option value="Extra-large">Extra Large - $20 base price</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group crust"><!-- SIZE -->
+                <label for="crust-selection">Please select a crust type:</label>
+                <select class="form-control" id="crust-selection" name="size">
+                  <option value="Thin-crust">Thin Crust</option>
+                  <option value="Chicago-style">Chicago Style</option>
+                </select>
+              </div>
             </div>
           </div>
-          <div class="form-group form-control"> <!-- TOPPINGS -->
-            <label for="toppings-selection">Please add your toppings</label>
-            <input type="checkbox" name="toppings-selection" value="olives"> Olives<br>
-            <input type="checkbox" name="toppings-selection" value="mushrooms"> Mushrooms<br>
-            <input type="checkbox" name="toppings-selection" value="onions"> Red Onions<br>
-            <input type="checkbox" name="toppings-selection" value="peppers"> Green Peppers<br>
-            <input type="checkbox" name="toppings-selection" value="jalapenos"> Jalapeños<br>
-            <input type="checkbox" name="toppings-selection" value="tomatoes"> Fresh Tomatoes<br>
-            <input type="checkbox" name="toppings-selection" value="basil"> Fresh Basil
-          </div>
-
-          <div class="form-group premium"><!--PREMIUM-->
-            <label for="premium-selection">Please add any Premium toppings:</label>
-            <input type="checkbox" name="premium-selection" value="artichoke"> Artichoke Hearts<br>
-            <input type="checkbox" name="premium-selection" value="sun-dried tomatoes"> Sun-dried Tomatoes<br>
-            <input type="checkbox" name="premium-selection" value="kalamata-olives"> Kalamata Olives<br>
-            <input type="checkbox" name="premium-selection" value="garlic"> Roasted Garlic<br>
-            <input type="checkbox" name="premium-selection" value="tomatoes"> Fresh Tomatoes<br>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group meat">
+                  <label for="toppings-selection">Please add your meat selection ($4 each):</label><br>
+                  <input type="checkbox" name="meat-selection" value="pepperoni"> Pepperoni<br>
+                  <input type="checkbox" name="meat-selection" value="sausage"> Sausage<br>
+                  <input type="checkbox" name="meat-selection" value="chicken"> Chicken<br>
+                  <input type="checkbox" name="meat-selection" value="canadian-bacon"> Canadian Bacon<br>
+                  <input type="checkbox" name="meat-selection" value="pancetta"> Pancetta<br>
+                  <input type="checkbox" name="meat-selection" value="ground-beef"> Ground beef (Flavored with taco seasoning)<br>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group toppings">
+                <label for="toppings-selection">Please add your toppings ($1.00 each): </label><br>
+                <input type="checkbox" name="toppings-selection" value="olives"> Olives<br>
+                <input type="checkbox" name="toppings-selection" value="mushrooms"> Mushrooms<br>
+                <input type="checkbox" name="toppings-selection" value="onions"> Red Onions<br>
+                <input type="checkbox" name="toppings-selection" value="peppers"> Green Peppers<br>
+                <input type="checkbox" name="toppings-selection" value="jalapenos"> Jalapeños<br>
+                <input type="checkbox" name="toppings-selection" value="tomatoes"> Fresh Tomatoes<br>
+                <input type="checkbox" name="toppings-selection" value="basil"> Fresh Basil
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group premium">
+                <label for="premium-selection">Please add any Premium toppings ($2.50 each):</label><br>
+                <input type="checkbox" name="premium-selection" value="artichoke"> Artichoke Hearts<br>
+                <input type="checkbox" name="premium-selection" value="sun-dried tomatoes"> Sun-dried Tomatoes<br>
+                <input type="checkbox" name="premium-selection" value="kalamata-olives"> Kalamata Olives<br>
+                <input type="checkbox" name="premium-selection" value="garlic"> Roasted Garlic<br>
+                <input type="checkbox" name="premium-selection" value="tomatoes"> Fresh Tomatoes<br>
+              </div>
+            </div>
           </div>
           <button type="submit" class="btn btn-primary"name="submit-order" id="submit-order">Next</button>
-        </form>
-      </div>
+          </form>
+          </div>
       <div class="confirmation">
-        <p>Please confirm your order</p>
-        <div id="confirmation-output">
-        </div>
-        <button type="button" name="confirm" class="btn btn-success confirm">Place Order</button>
+        <p>Please confirm your order. If desired, make any changes and resubmit</p>
+        <p id="confirmation-output">
+        </p>
+        <button type="button" name="confirm" class="btn btn-success" id="confirm-order">Place Order</button>
       </div>
       <div class="receipt">
-        <p>Here is a receipt for your records:</p>
-        <div id="receipt-output">
+        <p>Your pizza is on it's way to the oven! Here's a receipt for your records:</p>
+        <p id="receipt-output">
 
-        </div>
+        </p>
+        <img src="img/homer.gif" alt="homer eating pizza" />
       </div>
     </div>
   </body>

@@ -15,7 +15,6 @@
 //   size , meat, toppings, premium};
 
 function Pizza(size, crust,meat, toppings, premium) {
-  debugger;
   this.size = size;
   this.meat = meat;
   this.toppings = toppings;
@@ -26,6 +25,7 @@ function Pizza(size, crust,meat, toppings, premium) {
   this.crustTime = {"Thin-crust": 15, "Chicago-style":25};
   this.cookTime = this.crustTime[crust];
   this.sizeCost = {Small : 5, Medium : 10, Large : 15, "Extra-large" : 20};
+
   this.price();
   this.order = this.confirmation();
   };
@@ -35,29 +35,29 @@ Pizza.prototype.price = function() {
   var sizeCost =  0;
   sizeCost = this.sizeCost[this.size];
   subtotal += (sizeCost);
-  subtotal += (this.meat.length *4);
-  subtotal += (this.toppings.length *1.5);
-  subtotal += (this.premium.length *2);
+  subtotal += (this.meat.length * 4);
+  subtotal += (this.toppings.length);
+  subtotal += (this.premium.length * 2.5);
   this.total = subtotal;
 };
 
 Pizza.prototype.confirmation = function() {
-  var orderSelection = (
+  return "<span>"+
     "Size: " + this.size + "<br>" +
     "Crust: " + this.crust + "<br>" +
     "Meat: " + this.meat + "<br>" +
     "Toppings: " + this.toppings + "<br>" +
     "Premium toppings: " + this.premium + "<br>" +
     "Total: $" + this.total + "<br><br>" +
-    "Estimated cook time: " + this.cookTime + "minutes"
-)
-return orderSelection;
+    "Estimated cook time: " + this.cookTime + " minutes"+
+    "</span>"
 }
 
 
 $(document).ready(function() {
   $('form').submit(function(event) {
     event.preventDefault();
+    $(".confirmation").show();
     var userMeatArray = [];
     var userToppingsArray = [];
     var userPremiumArray = [];
@@ -74,10 +74,11 @@ $(document).ready(function() {
       userPremiumArray.push($(this).val());
     });
     userPizza = new Pizza(userSize,userCrust,userMeatArray,userToppingsArray, userPremiumArray);
-    $("#confirmation-output").append(userPizza.order);
+    $("#confirmation-output").html(userPizza.order);
   });
-  $(".confirm").click(function(){
+  $("#confirm-order").click(function(){
     $(".confirmation, .place-order").hide();
-    $("#receipt-output").append(userPizza.order);
+    $(".receipt").show();
+    $("#receipt-output").html(userPizza.order);
   })
 });

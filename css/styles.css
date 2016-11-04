@@ -1,0 +1,18 @@
+.receipt , .confirmation {
+  display:none;
+  margin-top: 2%;
+}
+
+body {
+  background-color:  #800000;
+}
+.container {
+  background-color: #F0EAD6;
+  padding:2%;
+  margin-top: 5%;
+}
+.head {
+  text-align: center;
+  padding: 2%;
+  margin-bottom:2%;
+}

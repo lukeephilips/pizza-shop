@@ -1,18 +1,6 @@
-//Selections offered
-
-// Pizza.prototype.sizeCost = {Small : 5, Medium : 10, Large : 15, "Extra-large" : 20};
-// var meat = ["pepperoni","sausage","chicken","canadian-bacon","pancetta", "ground-beef"]
-// var toppings = ["olives","mushrooms","onions","peppers","jalapenos","tomatoes","basil"]
-// var premium = ["artichoke","sun-dried-tomatoes","kalamata-olives"]
-//
-// var Choices = {
-//   // 'size' : {
-//   //   'small': 5,
-//   //   "medium":10,
-//   //   "large":15,
-//   //   "x-large":20
-//   // }
-//   size , meat, toppings, premium};
+var userMeatArray = [];
+var userToppingsArray = [];
+var userPremiumArray = [];
 
 function Pizza(size, crust,meat, toppings, premium) {
   this.size = size;
@@ -36,9 +24,11 @@ Pizza.prototype.price = function() {
   sizeCost = this.sizeCost[this.size];
   subtotal += (sizeCost);
   subtotal += (this.meat.length * 4);
-  subtotal += (this.toppings.length);
-  subtotal += (this.premium.length * 2.5);
-  this.total = subtotal;
+  if (this.toppings.length >3) {
+    subtotal += (1);
+  }
+  subtotal += (this.premium.length *2.5);
+  this.total = subtotal.toFixed(2);
 };
 
 Pizza.prototype.confirmation = function() {
@@ -49,18 +39,16 @@ Pizza.prototype.confirmation = function() {
     "Toppings: " + this.toppings + "<br>" +
     "Premium toppings: " + this.premium + "<br>" +
     "Total: $" + this.total + "<br><br>" +
-    "Estimated cook time: " + this.cookTime + " minutes"+
+    "Ready for pickup in: " + this.cookTime + " minutes"+
     "</span>"
 }
-
 
 $(document).ready(function() {
   $('form').submit(function(event) {
     event.preventDefault();
     $(".confirmation").show();
-    var userMeatArray = [];
-    var userToppingsArray = [];
-    var userPremiumArray = [];
+    $(".place-order").hide();
+
     var userSize = $("#size-selection").val();
     var userCrust = $("#crust-selection").val();
 
@@ -73,11 +61,15 @@ $(document).ready(function() {
     $("input:checkbox[name=premium-selection]:checked").each(function() {
       userPremiumArray.push($(this).val());
     });
+
     userPizza = new Pizza(userSize,userCrust,userMeatArray,userToppingsArray, userPremiumArray);
+
     $("#confirmation-output").html(userPizza.order);
+
   });
+
   $("#confirm-order").click(function(){
-    $(".confirmation, .place-order").hide();
+    $(".confirmation, .place-order, .head").hide();
     $(".receipt").show();
     $("#receipt-output").html(userPizza.order);
   })

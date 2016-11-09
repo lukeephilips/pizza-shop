@@ -1,6 +1,3 @@
-var userMeatArray = [];
-var userToppingsArray = [];
-var userPremiumArray = [];
 
 function Pizza(size, crust,meat, toppings, premium) {
   this.size = size;
@@ -44,6 +41,9 @@ Pizza.prototype.confirmation = function() {
 }
 
 $(document).ready(function() {
+  var userMeatArray = [];
+  var userToppingsArray = [];
+  var userPremiumArray = [];
   $('form').submit(function(event) {
     event.preventDefault();
     $(".confirmation").show();

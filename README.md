@@ -8,33 +8,29 @@
 
 _Program specifications:_
 
-1 Do not allow user to input a non integer character
-* Example input: r
-* Example output: "please enter a number"
+1 User can select pizza size (small, medium large) which will set base price
+* Example input: small
+* Example output: price = $5
 
-2 If user inputs n< 5 return 1 through n
-* Example input: 4
-* Example output: 1 2 3 4
+2 User can select crust type (thin, Chicago), which will set 'ready for pickup' time (15, 20 minutes respectively)
+* Example input: thin crust
+* Example output: ready for pickup in 15 min
 
-3 If user inputs n> 5, return 1 through n, if this contains a multiple of 3, replace i with "ping"
-* Example input: 3
-* Example output: 1 2 ping
+3 user can add 1 or multiple meat selections for additional $4 each
+* Example input: Pepperoni, Sausage
+* Example output: Pepperoni, Sausage
 
-4 If user inputs n> 5, return 1 through n, if this contains a multiple of 5, replace i with "pong"
-* Example input: 5
-* Example output: 1 2 ping 4 pong
+4 user can add 1 or multiple topping selections - each selection after 3 are additional $1 each
+* Example input: Olives, Mushrooms
+* Example output: Olives, Mushrooms
 
-5  If user inputs n> 15, return 1 through n, if this contains a multiple of 5 and 3, replace i with "ping-pong"
-* Example input: 15
-* Example output: 1 2 ping 4 pong ping 7 8 ping pong 11 ping 13 14 ping-pong
+5  user can add 1 or multiple premium toppings for additional $2.50 each
+* Example input: null
+* Example output: null
 
-6 If user clicks "Remove Pings", pings will slide right and .hide
+6 On order submit, display order confirmation with values of all selections
 
-7 If user clicks "Remove Pongs", pongs will slide left and .hide
-
-8 If user clicks "remove all", both pings and pongs will slide left and .hide
-
-9 If user clicks "Add them back", all pings and pongs will .show
+7 On place order, hide all content except confirmation for receipt
 
 ## Setup/Installation Requirements
 
